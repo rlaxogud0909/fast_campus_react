@@ -1,0 +1,38 @@
+<!-- 
+    CodeSandBox -> 리엑트 맛보기 동안 사용할 도구
+    Vanilla js Dom -> W3Schools / createElement
+    CDN -> unpkg
+    React / React-dom -> element 생성 / appendChild
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- React CDN -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <div id="root"></div>
+    <script>
+      const rootElement = document.getElementById("root");
+      // const elementV = document.createElement("h1");
+
+      // React.createElement: https://ko.reactjs.org/docs/react-api.html#createelement
+      // const element = React.createElement("h1", { children: "hello world!!" });
+      const element = React.createElement("h1", null, "Hello, world");
+      
+      // elementV.textContent = "Hello, world!";
+
+      console.log(element);
+      // console.log(elementV);
+    
+      // ReactDOM.render: https://ko.reactjs.org/docs/react-dom.html#render
+      ReactDOM.render(element, rootElement);
+      // rootElement.appendChild(element);
+    </script>
+  </body>
+</html>
