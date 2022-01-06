@@ -1,0 +1,49 @@
+<!-- 
+    JSX -> React.createElement 표현식 
+    Babel -> JavaScript Complier (JSX 표현 -> JS 표현)
+    JSX 다루기 -> spread 연산자 ({...props})
+ -->
+<!-- 
+    JSX란 
+    문자도 HTML도 아닌 JavaScript의 확장 문법
+    EX) const element = <h1>Hello, world!</h1>;
+ -->
+<!-- 
+    컴퍼일러란?: 언어 해석기, 특정언어를 다른 프로그래밍 언어로 옮기는 프로그램
+    자바스크립트 컴파일러 -> 바벨
+
+    jsx라는 표기를 react도 아닌 자바스크립트도 이해할 수 있는 표기로 바꾼다
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <div id="root"></div>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 이 스키립트는 바벨이 컴파일 해준다. -->
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const text = "Hello, world!";
+      const titleClassName = "title123";
+      const props = { className: titleClassName, children: text };
+      // const customH1 = <h1 {...props} />; -> ...props spread 연산자
+      // 아래와 같이 작동
+      const customH1 = (
+        <h1 className={props.className} children={props.children} />
+      );
+      const element = customH1;
+      ReactDOM.render(element, rootElement);
+    </script>
+  </body>
+</html>
