@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      // const Paint = ({ title, description, children }) => (
+      //   <>
+      //     <h1>{title}</h1>
+      //     <h3>{description}</h3>
+      //     {children}
+      //   </>
+      // );
+
+      // 아래 코드는 jsx 안에 함수(자바스크립트 코드)를 섞어씀
+      // <Paint title="Good" description="good">
+      //   {Paint({ title: "Bad", description: "bad", children: "h1" })}
+      // </Paint>
+
+      // jsx 와 js 섞어쓰기
+      // if문은 js이지만 return은 jsx 이다
+      const Text = ({ text }) => {
+        if (text.charAt(0) === text.charAt(0).toUpperCase()) {
+          return <h1>{text}</h1>;
+        } else {
+          return <h3>{text}</h3>;
+        }
+      };
+
+      // 다른 코드는 js이지만 return을 jsx로 하는 것을 볼 수 있음
+      function Number({ number, selected }) {
+        return selected ? <h1>{number}</h1> : <h3>{number}</h3>;
+      }
+
+      const element = (
+        <>
+          <Text text="Text" />
+          <Text text="text" />
+
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((number) => (
+            <Number
+              className="title"
+              key={number}
+              number={number}
+              selected={number === 3}
+            />
+          ))}
+        </>
+      );
+
+      ReactDOM.render(element, rootElement);
+    </script>
+  </body>
+</html>
