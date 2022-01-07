@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 이 코드를 어떻게 리엑트로 구현? -->
+    <div id="root">
+      <h1>Hi</h1>
+      <h3>Bye</h3>
+      <h5>children</h5>
+    </div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      // 위 html 코드 리엑트로 구현
+      // 문제점 div라는 태그가 추가된다.
+      const element = (
+        <div
+          className="box"
+          children={[
+            React.createElement("h1", null, "Hi"),
+            React.createElement("h3", null, "Bye"),
+            React.createElement("h5", null, "children")
+          ]}
+        />
+      );
+
+      // 위의 코드에서 div 빼기
+      // React.Fragment: 부모로써 감싸주는 역할만 함
+      const element = (
+        <React.Fragment
+          children={[<h1>Hi</h1>, <h3>Bye</h3>, <h5>children</h5>]}
+        />
+      );
+
+      // 더짧게 변경
+      // React를 JSX로 변경
+      // 또한 React.Fragment를 그냥 <> </>로 해도 됨
+      const element = (
+        <>
+          <h1>Hi</h1>
+          <h3>Bye</h3>
+          <h5>children</h5>
+        </>
+      );
+      ReactDOM.render(element, rootElement);
+    </script>
+  </body>
+</html>
