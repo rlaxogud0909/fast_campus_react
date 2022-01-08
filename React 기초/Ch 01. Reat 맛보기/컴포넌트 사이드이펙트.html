@@ -1,0 +1,71 @@
+<!--
+    사이드 이팩트??
+
+    사이드 이펙트 = 부작용
+
+    의도하지 않은 효과 vs 부수 효과
+
+    리엑트에서 변경이 일어날때 다른 곳에 영향?
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const App = () => {
+        // React.useState: 상태값을 관리해주는 훅
+        const [keyword, setKeyword] = React.useState(() => {
+          console.log("initialize");
+          return window.localStorage.getItem("keyword");
+        });
+        const [result, setResult] = React.useState("");
+        const [typing, setTyping] = React.useState(false);
+
+        console.log("render");
+
+        //React.useEffect ?
+        React.useEffect(() => {
+          console.log("effect");
+          // window.localStorage로 keyword 저장
+          window.localStorage.setItem("keyword", keyword);
+        }, []);
+        // [] 있는 경우 한번 실행
+        // [keyword] keyword가 바뀔때 실행
+
+        function handleChange(event) {
+          setKeyword(event.target.value);
+          setTyping(true);
+        }
+
+        function handelClick() {
+          setTyping(false);
+          setResult(`we find results of ${keyword}`);
+        }
+
+        return (
+          <>
+            <input onChange={handleChange} value={keyword} />
+            <button onClick={handelClick}>search</button>
+            <p>{typing ? `Looking for ${keyword}...` : result}</p>
+          </>
+        );
+      };
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>
