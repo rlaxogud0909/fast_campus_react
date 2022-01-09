@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const App = () => {
+        console.log("APP render start");
+        const [show, setShow] = React.useState(() => {
+          console.log("App useState");
+          return false;
+        });
+
+        // useEffect는 사이드 이펙트라서 render가 끝나고 호출된다.
+        // 매번 실행됨 
+        React.useEffect(() => {
+          console.log("App useEffect, no deps");
+        });
+
+        // empty deps은 처음 한번 실행 됨
+        React.useEffect(() => {
+          console.log("App useEffect, empty deps");
+        }, []);
+        
+        // show가 바뀔때 실행됨 
+        React.useEffect(() => {
+          console.log("App useEffect, [show]");
+        }, [show]);
+
+        function handleClick() {
+          // useState에서 prev (이전값)을 미리 가져올 수 있음
+          setShow((prev) => !prev);
+        }
+        return (
+          <>
+            <button onClick={handleClick}>Search</button>
+            {show ? (
+              <>
+                <input />
+                <p></p>
+              </>
+            ) : null}
+          </>
+        );
+      };
+
+      console.log("APP render end");
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>
