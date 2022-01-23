@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+
+      const Id = ({ handleIdChange }) => {
+        return (
+          <>
+            <label>ID: </label>
+            <input onChange={handleIdChange} />
+          </>
+        );
+      };
+
+      const Password = ({ handlePasswordChange }) => {
+        return (
+          <>
+            <label>PW: </label>
+            <input type="password" onChange={handlePasswordChange} />
+          </>
+        );
+      };
+
+      const App = () => {
+        // id와 password의 상태를 Id와 Password에 있는 곳에서 App으로 상태를 끌어오린것이다.
+        // 하지만 너무 과도한 상태끌어올리기는 상태관리를 깔끔하게 하지 못한다.
+        const [id, setId] = React.useState("");
+        const [password, setPassword] = React.useState("");
+
+        const handlePasswordChange = (event) => {
+          setPassword(event.target.value);
+          console.log(`password length: ${event.target.value.length > 0}`);
+        };
+
+        const handleIdChange = (event) => {
+          setId(event.target.value);
+          console.log(`id length: ${event.target.value.length > 0}`);
+        };
+
+        const handleLoginCilck = () => {
+          alert(`id: ${id}, pw: ${password}`);
+        };
+
+        return (
+          <>
+            <Id handleIdChange={handleIdChange} />
+            <br />
+            <Password handlePasswordChange={handlePasswordChange} />
+            <button
+              disabled={id.length === 0 || password.length === 0}
+              onClick={handleLoginCilck}
+            >
+              LOGIN
+            </button>
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, rootElement);
+    </script>
+  </body>
+</html>
