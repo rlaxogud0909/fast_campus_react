@@ -1,0 +1,43 @@
+1.	 DOM 다루기 / Element 생성하기 정리
+	React / React-dom -> element 생성 / appendChild
+2.	JSX와 Babel / JSX 다루기
+	JSX -> React.createElement 표현식
+	Balel -> JavaScript Complier
+3.	Element 찍어내기
+	Function -> 재사용 가능한 Element (효율적이기 때문)
+4.	리액트의 리랜더링 알아보기
+	바닐라 js -> 변경으로 인해 Element를 다시 그림
+	하지만 리엑트에서는 다시 그리는 것보단 알고리즘을 통해서 본다.
+5.	리액트의 리랜더링 알아보기2
+	리액트의 비교 알고리즘은 Reconciliation(재조정)을 말하는데 거기에 여러 단계가 있었다. (키, 타입, 트리안의 내용, 변경된곳만 변경)
+	Virtual Dom -> 비교시 활용
+6.	컴포넌트 상태 다루기
+	useState -> 상태값을 관리해주는 훅
+7.	컴포넌트 사이드 이펙트 다루기
+	useEffect -> dependency array
+8.	커스텀 훅 만들기
+	훅들이 반복 -> custom Hook으로
+9.	Hook flow 이해하기
+	Hook flow -> hook들의 호출 타이밍
+10.	Hook flow 이해하기2
+	Update시 -> useEffect clean up / useEffect
+
+11.	Ref로 Dom 다루기
+	React -> useRef(라는 훅을 제공)  / ref
+12.	Key와 리렌더링 알아보기
+	Key -> Value를 특정하는 이름
+13.	상태 끌어올리기
+	형제 컴포넌트의 상태 궁금 -> 필요하면 부모로 lifting up
+14.	데이터 Fetch해보기
+	상황별 핸들링 -> 로딩 / 데이터 / 에러
+
+공식문서를 보는 이유와 방법
+
+공식문서 -> 라이브러리 설명서
+공식문서 읽기 -> 리액트로 시작후 반복 숙달
+
+
+npx create-react-app my-app
+cd my-app
+npm start
+node, npm, npx  -> create-react-app
