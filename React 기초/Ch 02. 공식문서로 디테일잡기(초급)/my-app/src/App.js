@@ -1,8 +1,9 @@
 import './App.css';
-import Input from './components/3-7.HOC/Input';
-import Button from './components/3-7.HOC/Button';
-import Memo from './components/3-8.Memoization/Memo';
+import Example from './components/3-11.Portal/Example';
 
+// import Memo from './components/3-8.Memoization/Memo';
+// import Input from './components/3-7.HOC/Input';
+// import Button from './components/3-7.HOC/Button';
 // import ThankyouDialog from './components/3-6.Composition2/ThankyouDialog';
 // import WelcomeDialog from './components/3-5.Composition/WelcomeDialog';
 // import Reducer from './components/3-3.Hooks/Reducer';
@@ -21,7 +22,8 @@ import Memo from './components/3-8.Memoization/Memo';
 function App() {
   return (
     <div className="App">
-      <Memo />
+      <Example />
+      {/* <Memo /> */}
       {/* <Input />
       <br />
       <br />
