@@ -1,6 +1,6 @@
 // dayjs는 가볍지만 tree shaking은 안된다.
 import React, { useRef, useState } from "react";
-import moment from "moment-timezone";
+// import moment from "moment-timezone";
 import "moment/locale/ko";
 import dayjs from "dayjs";
 import "dayjs/locale/ko";
