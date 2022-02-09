@@ -1,12 +1,16 @@
 import "./App.css";
-import StyledComponentExample from "./components/StyledComponentsExample/StyledComponentExample";
-import StyledComponentExample2 from "./components/StyledComponentsExample/StyledComponentExample2";
+import Example from "./components/SassExample/Example";
+// import EmotionExample from "./components/EmotionExample/EmotionExample";
+// import StyledComponentExample from "./components/StyledComponentsExample/StyledComponentExample";
+// import StyledComponentExample2 from "./components/StyledComponentsExample/StyledComponentExample2";
 
 function App() {
     return (
         <div className="App">
-            <StyledComponentExample2 />
-            <StyledComponentExample />
+            <Example />
+            {/* <EmotionExample /> */}
+            {/* <StyledComponentExample2 /> */}
+            {/* <StyledComponentExample /> */}
         </div>
     );
 }
