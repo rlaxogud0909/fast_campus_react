@@ -5,13 +5,15 @@ import FormExample from "./FormExample";
 import GetStart from "./GetStart";
 import IconExample from "./IconExample";
 import LayoutExample from "./LayoutExample";
+import ModalExample from "./ModalExample";
 import TableExample from "./TableExample";
 import TypographyExample from "./TypographyExample";
 
 export default function AntDesignExample() {
     return (
         <div>
-            <TableExample />
+            <ModalExample />
+            {/* <TableExample /> */}
             {/* <FormExample /> */}
             {/* <LayoutExample /> */}
             {/* <TypographyExample />
