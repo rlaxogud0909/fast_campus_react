@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonGroup, Button } from "react-bootstrap";
+import { ButtonGroup, Button, Spinner } from "react-bootstrap";
 export default function ButtonExample() {
     return (
         <>
@@ -20,6 +20,26 @@ export default function ButtonExample() {
                 <Button>Middle</Button>
                 <Button>Right</Button>
             </ButtonGroup>
+            <Button variant="primary" disabled>
+                <Spinner
+                    as="span"
+                    animation="border"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                />
+                <span className="visually-hidden">Loading...</span>
+            </Button>{" "}
+            <Button variant="primary" disabled>
+                <Spinner
+                    as="span"
+                    animation="grow"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                />
+                Loading...
+            </Button>
         </>
     );
 }
