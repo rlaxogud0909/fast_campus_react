@@ -1,0 +1,40 @@
+msw
+mocking: 모의 데이터 활용
+Browser: Service worker 활용
+REST API / GraphQL -> 모두 모킹이 가능하다
+mock: handler / brower 만 있어도 동작
+publi에 설정 -> 설정 방법: npx msw init <PUBLIC_PATH>
+기타 커스텀: query / patching / error
+ 
+
+Redux
+전역 상태 관리이다
+단 방향 데이터(상태) 흐름 -> Flux
+구성요소: store/ reducer / action / selecter
+RTK: Redux 라이브러리들 조합
+라이브러리들: immer / saga / thunk / reselect
+Redux Dev Tools: Chrome extension에서 제공
+Hooks -> useSelector / useDispatch
+API 통신 -> 비동기 작업(RTK-Query)
+Redux-Thunk -> Action으로 API 요청/결과 Store에 반영
+ 
+
+Mobx
+simple(No Boilerplate)
+
+Action -> Derivative를 바꾸는 유일한 수단
+Reactive Programming: Observable / Observer
+with React -> re-render issue (small component)
+makeAutoObservable (makeObservable을 보다 쉽게)
+actions: runInAction / flow
+Computed -> getter pure
+reactoin: side effect
+reactive: observable 인 것이 바뀔때
+ 
+
+Context API: 리액트 자체에서 제공
+
+Redux: 전역 상태 관리 (action, dispatch, reducer ...)
+
+Mobx: observable reactive programming
+
