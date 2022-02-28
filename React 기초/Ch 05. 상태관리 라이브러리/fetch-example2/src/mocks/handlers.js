@@ -1,6 +1,17 @@
 import { rest } from "msw";
 
 export const handlers = [
+    rest.get("http://localhost:3000/api/user-name", async (req, res, ctx) => {
+        const id = req.url.searchParams.get("id");
+        return res(
+            ctx.json({
+                name: id === "1" ? "The one" : "The others",
+            })
+        );
+
+        // 에러 코드
+        // return res(ctx.status(400));
+    }),
     rest.get("/login", async (req, res, ctx) => {
         return res(
             ctx.json({

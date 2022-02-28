@@ -1,0 +1,26 @@
+// Atoms -> 공유된 상태(get / set)
+// seletors -> 파생된 상태(get만 가능할 수도)
+
+import React from "react";
+import { useRecoilValue } from "recoil";
+import { todoListStatsState } from "./TodoStore";
+
+export default function TodoListStats() {
+    const {
+        totalNum,
+        totalCompletedNum,
+        totalUncompletedNum,
+        percentCompleted,
+    } = useRecoilValue(todoListStatsState);
+
+    const formattedPercentCompleted = Math.round(percentCompleted * 100);
+
+    return (
+        <ul>
+            <li>Total items: {totalNum}</li>
+            <li>Items completed: {totalCompletedNum}</li>
+            <li>Items not completed: {totalUncompletedNum}</li>
+            <li>Percent completed: {formattedPercentCompleted}</li>
+        </ul>
+    );
+}
