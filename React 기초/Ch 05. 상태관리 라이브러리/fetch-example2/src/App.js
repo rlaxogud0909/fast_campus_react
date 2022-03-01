@@ -1,14 +1,17 @@
 import "./App.css";
+import CharacterCounter from "./components/ZustandExample/CharacterCounter";
 // import TestMocking from "./components/TestMocking";
 // import MobxExample from "./components/MobxExample";
 // import TodoList from "./components/TodoList";
 // import { observableTodoStore } from "./app/ObservableTodoStore";
-import { RecoilRoot } from "recoil";
-import FontButton from "./components/RecoilExample/FontButton";
-import Text from "./components/RecoilExample/Text";
-import CharacterCounter from "./components/RecoilExample/CharacterCounter";
-import TodoList from "./components/RecoilExample/Todo/TodoList";
-import CurrentUserInfo from "./components/RecoilExample/CurrentUserInfo";
+// import { RecoilRoot } from "recoil";
+// import FontButton from "./components/RecoilExample/FontButton";
+// import Text from "./components/RecoilExample/Text";
+// import CharacterCounter from "./components/RecoilExample/CharacterCounter";
+// import TodoList from "./components/RecoilExample/Todo/TodoList";
+// import CurrentUserInfo from "./components/RecoilExample/CurrentUserInfo";
+import Text from "./components/ZustandExample/Text";
+import TodoList from "./components/ZustandExample/Todo/TodoList";
 
 function App() {
     return (
@@ -16,13 +19,16 @@ function App() {
             {/* <TestMocking /> */}
             {/* <MobxExample /> */}
             {/* <TodoList store={observableTodoStore} /> */}
-            <RecoilRoot>
-                {/* <FontButton />
+            {/* <RecoilRoot> */}
+            {/* <FontButton />
                 <Text />
                 <CharacterCounter /> */}
-                <TodoList />
-                <CurrentUserInfo />
-            </RecoilRoot>
+            {/* <TodoList /> */}
+            {/* <CurrentUserInfo /> */}
+            {/* </RecoilRoot> */}
+            <Text />
+            <CharacterCounter />
+            <TodoList />
         </div>
     );
 }
