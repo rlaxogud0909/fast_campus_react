@@ -1,5 +1,7 @@
 import "./App.css";
 import CharacterCounter from "./components/ZustandExample/CharacterCounter";
+import CurrentUserInfo from "./components/ZustandExample/CurrentUserInfo";
+import Scratches from "./components/ZustandExample/Scratches";
 // import TestMocking from "./components/TestMocking";
 // import MobxExample from "./components/MobxExample";
 // import TodoList from "./components/TodoList";
@@ -29,6 +31,8 @@ function App() {
             <Text />
             <CharacterCounter />
             <TodoList />
+            <CurrentUserInfo />
+            <Scratches />
         </div>
     );
 }
