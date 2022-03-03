@@ -14,6 +14,7 @@ import Scratches from "./components/ZustandExample/Scratches";
 // import CurrentUserInfo from "./components/RecoilExample/CurrentUserInfo";
 import Text from "./components/ZustandExample/Text";
 import TodoList from "./components/ZustandExample/Todo/TodoList";
+import Profile from "./components/SWRExample/Profile";
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
             <TodoList />
             <CurrentUserInfo />
             <Scratches />
+            <Profile />
         </div>
     );
 }
