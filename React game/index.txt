@@ -1,0 +1,12 @@
+1.state
+    state:바뀔 여지가 있는 부분이 상태(state)이다.
+    setState: 상태를 바꾸고 싶을 때 
+ 
+2. jquery 였다면 $('button').text('Liked')와 같이 직접 바꿔줘야한다.
+
+3. JSX와 바벨(babel)
+    원시적인 코드에서는 가독성이 안좋았기때문에 JSX로 가독성을 높였다.
+    script 코드에서는 jsx (js + xml)문법을 지원하지 않기 때문에 문제가 생김 -> 바벨을 사용
+
+
+4. setState가 일어나면 render가 다시 실행된다.
