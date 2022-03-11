@@ -15,7 +15,7 @@
     this.state = {} 를 [state, setState] = useState()로 변경
     ref -> React.useRef()
 
-6. 웹팩
+6. 웹팩 https://webpack.js.org/concepts/
     설치 과정
     터미널에서 npm init (노드가 설치 되어있어야함)
     (노드는 서버가 아닌 자바스크립트 실행기라고 생각)
@@ -27,3 +27,26 @@
     (여기 까지 리액트의 기본 설정 방법이다)
     (cra를 사용하면 이것을 한번에 자동화)
 
+    webpack.config.js를 설정해준 다음 터미널에 
+    
+    webpack 명령어를 설정해준다(package.json)
+    npm run dev를 쳐주면 됨
+
+    webpack이 jsx를 인식하지 못함
+    바벨(바벨안의 jsx도 설정)을 설정해줘야함
+
+    바벨 설치: npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader
+
+@babel/preset-env와 plugins
+    preset이란 plugins의 모음이다
+
+
+웹팩 데브 서버와 핫 리로딩
+    기존 리로딩햇을 때 기존 데이터가 날아가는데
+    핫 리로딩은 그렇지 않다
+
+    핫리로딩하는 패키지 설치
+    npm i react-refresh @pmmmwh/react-refresh-webpack-plugin - D
+    
+    개발용 서버 설치
+    npm i -D webpack-dev-server
