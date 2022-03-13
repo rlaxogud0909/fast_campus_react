@@ -79,3 +79,19 @@ attribute, props
 
     jsx 컴포넌트
     <Try value={value} /> : jsx에서 value를 props로 불림
+
+
+랜더링 최적화
+    state가 바꼈는지 인지
+
+    shouldComponentUpdate(nextProps, nextState, nextContext)
+
+    PureComponent (클래스)
+
+    React.memo (함수)
+
+React.createRef 
+
+
+props 와 state 연결
+    props는 자식에서 바꾸면 안된다(부모에서 바꿔야한다.)
