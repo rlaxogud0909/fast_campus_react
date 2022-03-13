@@ -50,3 +50,32 @@
     
     개발용 서버 설치
     npm i -D webpack-dev-server
+
+import와 require 비교
+    require는 노드의 모듈 시스템
+    moudle.exports를 하면 다른 파일에서 읽어올 수 있다.
+
+    import {} from '' -> {}는 구조 분해 문법
+    exports되는게 객체나 배열이면 구조 분해할 수 있다. (default로 export 안한 애들)
+    ex)
+    export const hello = 'hello'; -> import { hello }
+    export default hello;         -> import hello
+
+map
+    배열.map((value) => {})
+    {['사과', '바나나', '포도'].map((value, index) => {
+        return (
+            <li>{value}</li>
+        )
+    })
+    출력
+    <li>사과</li>
+    <li>바나나</li>
+    <li>포도</li>
+
+attribute, props
+    HTML 태그
+    <div value=value><div> : HTML에서 value를 attribute로 불림
+
+    jsx 컴포넌트
+    <Try value={value} /> : jsx에서 value를 props로 불림
