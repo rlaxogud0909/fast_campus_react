@@ -46,7 +46,7 @@
     핫 리로딩은 그렇지 않다
 
     핫리로딩하는 패키지 설치
-    npm i react-refresh @pmmmwh/react-refresh-webpack-plugin - D
+    npm i react-refresh @pmmmwh/react-refresh-webpack-plugin -D
     
     개발용 서버 설치
     npm i -D webpack-dev-server
@@ -118,3 +118,35 @@ props 와 state 연결
     componentWillUnmount에 clear를 해줘야한다
     그렇지 않으면 setInterval은 웹사이트가 종료될때 까지 계속 실행됨
     
+
+class에서는 componentDidMount, componentDidUpdate ... 등으로 라이프사이클을 관리할 수 있지만
+hooks에서는 어떻게 할까 -> useEffect
+
+    useEffect(() => { //componentDidMount, componentDidUpdate 역할 (1대1 대은은 아님)
+        return () => { // componentWillUnmount 역할
+
+        }
+    }, [])
+
+
+const test = () => {
+    
+}
+-> 이것은 hooks 컴포넌트가 아니라 함수 컴포넌트다
+hooks 컴포넌트는 useState, useEffect가 hooks 컴포넌트다
+
+
+useMemo와 useCallback
+
+    useMemo는 복잡한 함수 결괏값을 기억
+    useRef는 일반 값을 기억
+
+    useCallback는 함수 자체를 기억한다.
+    자식컴포넌트에 함수를 넘길때는 useCallback를 꼭 써줘야한다.
+    왜냐하면 useCallback이 없으면 매번 새로운 함수가 생성되는데
+    자식컴포넌트에 props로 매번 새로운 함수를 받으면 매번 랜더링을 해버린다.
+
+Hooks의 자잘한 팁
+
+    useState는 순서를 잘 지켜줘야한다.
+    (때문에 최상위에 선언한다.)
