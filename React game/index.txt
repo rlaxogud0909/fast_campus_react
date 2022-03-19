@@ -161,3 +161,7 @@ useRedcuer (action, dispatch, redcuer)
     
     useState가 많아 질 경우 useRedcuer를 고려해보는 것이 좋다.
 
+context api
+
+    useRedcuer는 tic~ -> table -> tr -> td로 물려줌
+    
