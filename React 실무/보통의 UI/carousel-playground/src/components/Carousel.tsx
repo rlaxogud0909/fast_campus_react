@@ -128,7 +128,7 @@ const Carousel: React.FC = () => {
                                 key={idx}
                                 activeIndex={activeIndex}
                             >
-                                <img src={banner} />
+                                <img src={banner} alt="" />
                             </CarouselListItem>
                         ))}
                     </CarouselList>
